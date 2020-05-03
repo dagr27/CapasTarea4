@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-	<form method="post" th:action="@{/Producto}" th:object="${product}">
+	<form method="post" th:action="@{/producto}" th:object="${product}">
 		<div>
-			<input th:field="*{codigo}" type="text" placeholder="Codigo"/><br>
-			<span th:errors="*{codigo}" style="color: #FF0000"></span>
+			<input th:field="*{codigo}" type="text" id="codigo" name="codigo" placeholder="Codigo"/><br>
+			<span  th:errors="*{codigo}">asd</span>
 		</div>
 		<div>
-			<input th:field="*{nombre}" type="text" placeholder="Nombre"/><br> 
-			<span th:errors="*{nombre}" style="color: #FF0000"></span>
+			<input th:field="*{nombre}" type="text" id="nombre" name="nombre"  placeholder="Nombre"/><br> 
+			<span th:errors="*{nombre}"></span>
 		</div>
 		<div>
-			<input th:field="*{marca}" type="text" placeholder="Marca"/><br>
-			<span th:errors="*{marca}" style="color: #FF0000"></span>
+			<input th:field="*{marca}" type="text" id="marca" name="marca" placeholder="Marca"/><br>
+			<span th:errors="*{marca}"></span>
 		</div>
 		<div>
-			<input th:field="*{description}" type="text" placeholder="Descripcion"/><br>
-			<span th:errors="*{description}" style="color: #FF0000"></span>
+			<input th:field="*{description}" type="text" id="description" name="description" placeholder="Descripcion"/><br>
+			<span th:errors="*{description}"></span>
 		</div>
 		<div>
-			<input th:field="*{existencias}" type="number" placeholder="Existencias"/><br>
-			<span th:errors="*{existencias}" style="color: #FF0000"></span>
+			<input th:field="*{existencias}" type="text" id="existencias" name="existencias" placeholder="Existencias"/><br>
+			<span th:errors="*{existencias}"></span>
 		</div>
 		<div>
-			<input th:field="*{fechaIngreso}" type="text" placeholder="Fecha dd/mm/yyyy"/><br>
-			<span th:errors="*{fechaIngreso}" style="color: #FF0000"></span>
+			<input th:field="*{fechaIngreso}" type="text" id="fechaIngreso" name="fechaIngreso" placeholder="Fecha dd/mm/yyyy"/><br>
+			<span th:errors="*{fechaIngreso}"></span>
 		</div>
 		<div>
 			<input type="submit" value="Enviar">

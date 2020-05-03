@@ -1,7 +1,9 @@
 package com.uca.capas.tarea4.domain;
 
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 /*Marca 100, desc 500, existencias entero, FechaIngreso dd/mm/yyyy*/
@@ -22,6 +24,8 @@ public class Producto {
 	@Size(min=1,max=500,message="Debes poner una descripcion que este entre 1 y 500 caracteres")
 	private String description;
 	
+	@NotNull
+	@Digits(integer=10, fraction=0, message="El numero debe de ser entero")
 	@Min(value=1, message="Debes poner como minimo 1")
 	private Integer existencias;
 	

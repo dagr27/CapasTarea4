@@ -12,12 +12,19 @@ import com.uca.capas.tarea4.domain.Producto;
 
 @Controller
 public class MainController {
-	@RequestMapping("/Producto")
-	public ModelAndView producto(@Valid @ModelAttribute Producto product, BindingResult result) {
+	
+	@RequestMapping("index")
+	public ModelAndView index() {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("product", new Producto());
-		
-		if(result.hasErrors()) {
+		mav.setViewName("index");
+		return mav;
+	}
+	
+	@RequestMapping("/producto")
+	public ModelAndView producto(@Valid @ModelAttribute("product") Producto product, BindingResult result) {	
+		ModelAndView mav = new ModelAndView();
+		if(result.hasFieldErrors()) {
 			mav.setViewName("index");
 		}else {
 			mav.addObject("code", product.getCodigo());
