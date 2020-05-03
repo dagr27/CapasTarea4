@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form method="post" th:action="@{/Producto}" th:object="${product}">
+		<div>
+			<input th:field="*{codigo}" type="text" placeholder="Codigo"/><br>
+			<span th:errors="*{codigo}" style="color: #FF0000"></span>
+		</div>
+		<div>
+			<input th:field="*{nombre}" type="text" placeholder="Nombre"/><br> 
+			<span th:errors="*{nombre}" style="color: #FF0000"></span>
+		</div>
+		<div>
+			<input th:field="*{marca}" type="text" placeholder="Marca"/><br>
+			<span th:errors="*{marca}" style="color: #FF0000"></span>
+		</div>
+		<div>
+			<input th:field="*{description}" type="text" placeholder="Descripcion"/><br>
+			<span th:errors="*{description}" style="color: #FF0000"></span>
+		</div>
+		<div>
+			<input th:field="*{existencias}" type="number" placeholder="Existencias"/><br>
+			<span th:errors="*{existencias}" style="color: #FF0000"></span>
+		</div>
+		<div>
+			<input th:field="*{fechaIngreso}" type="text" placeholder="Fecha dd/mm/yyyy"/><br>
+			<span th:errors="*{fechaIngreso}" style="color: #FF0000"></span>
+		</div>
+		<div>
+			<input type="submit" value="Enviar">
+		</div>
+	</form>
+</body>
+</html>
